@@ -5,7 +5,6 @@ describe('Bubble Sort', function() {
 
   it('handles an empty array', function() {
     expect(bubbleSort([])).toEqual([])
-    // expect( window.swap.calls.count() ).toEqual(1)
   })
 
   it('handles a sorted array', function() {
@@ -17,5 +16,11 @@ describe('Bubble Sort', function() {
     let arr = [3, 7, 8, 4, 1, 6, 9, 0, 2, 5]
     let expected = arr.slice().sort()
     expect(bubbleSort(arr)).toEqual(expected)
+  })
+
+  it('calls swap the correct number of times', function() {
+    let arr = [2, 1];
+    bubbleSort(arr);
+    expect( swap.calls.count() ).toEqual(1)
   })
 })
